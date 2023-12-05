@@ -10,6 +10,7 @@ public class TCP {
             Event event = new Event(scanner.next());
             tcp.handleEvent(event.event_name);
         }
+        scanner.close();
     }
 
     public void handleEvent(String event) {
@@ -91,19 +92,6 @@ public class TCP {
         LAST_ACK
     }
     
-    public static enum Input {
-        PASSIVE,
-        ACTIVE,
-        SYN,
-        SYNACK,
-        ACK,
-        RDATA,
-        SDATA,
-        FIN,
-        CLOSE,
-        TIMEOUT
-    }
-    
     static class Event {
         // Data members
         public String event_name;
@@ -158,7 +146,12 @@ class State {
 
 
 class Transition {
+    public Transition(State cs, Event evt, State ns, Action act) {
 
+    }
+    protected void doAction() {
+        
+    }
 }
 
 // abstract class Action {
